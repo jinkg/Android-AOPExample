@@ -55,12 +55,12 @@ public class TraceAspect {
         stopWatch.start();
         Object result = joinPoint.proceed();
         stopWatch.stop();
-        DebugLog.log(className, buildLogMessage(methodName, stopWatch.getTotalTimeMillis()));
+        DebugLog.log(className, buildLogMessage(className, methodName, stopWatch.getTotalTimeMillis()));
 
         return result;
     }
 
-    private static String buildLogMessage(String methodName, long methodDuration) {
-        return methodName + " --> " + "[" + methodDuration + "ms" + "]";
+    private static String buildLogMessage(String className, String methodName, long methodDuration) {
+        return className + "." + methodName + " --> " + "[" + methodDuration + "ms" + "]";
     }
 }
