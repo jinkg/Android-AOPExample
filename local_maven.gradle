@@ -18,7 +18,7 @@ apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'maven-publish'
 
 def GROUP_ID = 'com.yalin.open'
-def ARTiFACT_ID = project.name == 'app' ? 'aop-example' : project.name
+`def ARTiFACT_ID = project.name == 'app' ? 'aop-example-app' : 'aop-aspect-lib'
 def ARTiFACT_VERSION = 'yalin-SNAPSHOT'
 def REPO_KEY = 'aop_example_local'
 def CONTEXT_URL = 'http://localhost:8081/artifactory'

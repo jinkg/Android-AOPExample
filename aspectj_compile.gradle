@@ -37,10 +37,13 @@ def aspectjEnable() {
 
 if (aspectjEnable()) {
     println(project.name)
-    if (project.android instanceof LibraryExtension) {
+
+    if (project.android instanceof LibraryExtension
+            || project.android.getClass().getSuperclass().getSimpleName() == 'LibraryExtension') {
         println("compileLibrary.........")
         compileLibrary(project)
-    } else if (project.project instanceof AppExtension) {
+    } else if (project.project instanceof AppExtension
+            || project.android.getClass().getSuperclass().getSimpleName() == 'AppExtension') {
         println("compileApplication.........")
         compileApplication(project)
     }

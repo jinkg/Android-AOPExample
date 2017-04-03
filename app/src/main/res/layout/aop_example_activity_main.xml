@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.yalin.aopexample.MainActivity">
 
-    <com.yalin.aopexample.component.MyLinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -46,5 +46,5 @@
                 android:layout_height="wrap_content" />
 
         </ScrollView>
-    </com.yalin.aopexample.component.MyLinearLayout>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
