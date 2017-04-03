@@ -20,7 +20,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
+import com.yalin.aspect.App;
 import com.yalin.aspect.annotation.DebugTrace;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aop_example_activity_main);
+
+        App.setConsole((TextView) findViewById(R.id.console));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        App.removeConsole();
     }
 
     public void refresh(View view) {

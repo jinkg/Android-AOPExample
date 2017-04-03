@@ -34,5 +34,17 @@
             android:layout_marginTop="10dp"
             android:onClick="test"
             android:text="Test" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/console"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </ScrollView>
     </com.yalin.aopexample.component.MyLinearLayout>
 </android.support.constraint.ConstraintLayout>

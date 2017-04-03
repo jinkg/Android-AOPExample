@@ -3,6 +3,7 @@
     package="com.yalin.aopexample">
 
     <application
+        android:name="com.yalin.aspect.App"
         android:allowBackup="true"
         android:icon="@mipmap/aop_example_ic_launcher_round"
         android:label="@string/aop_example_app_name"

@@ -14,32 +14,42 @@
  * limitations under the License.
  */
 
-package com.yalin.aspect.internal;
+package com.yalin.aspect;
 
-import android.util.Log;
+import android.app.Application;
+import android.content.Context;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.yalin.aspect.App;
 
 /**
  * @author jinyalin
- * @since 2017/3/31.
+ * @since 2017/4/3.
  */
 
-public class DebugLog {
-    private DebugLog() {
+public class App extends Application {
+    private static Context CONTEXT;
+
+    private static TextView CONSOLE;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        CONTEXT = getApplicationContext();
     }
 
-    public static void log(String tag, String message) {
-        Log.d(tag, message);
+    public static Context getContext() {
+        return CONTEXT;
+    }
 
-        TextView console = App.getConsole();
-        if (console == null) {
-            Toast.makeText(App.getContext(), message, Toast.LENGTH_SHORT).show();
-        } else {
-            console.append(message);
-            console.append("\n");
-        }
+    public static void setConsole(TextView console) {
+        CONSOLE = console;
+    }
+
+    public static void removeConsole() {
+        setConsole(null);
+    }
+
+    public static TextView getConsole() {
+        return CONSOLE;
     }
 }

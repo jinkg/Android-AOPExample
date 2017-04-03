@@ -61,7 +61,6 @@ public class TraceAspect {
     }
 
     private static String buildLogMessage(String methodName, long methodDuration) {
-        return "Aspect --> " + methodName + " --> " +
-                "[" + methodDuration + "ms" + "]";
+        return methodName + " --> " + "[" + methodDuration + "ms" + "]";
     }
 }
